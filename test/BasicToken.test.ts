@@ -2,10 +2,11 @@ import { ethers } from 'hardhat'
 import { expect } from './shared/expect'
 import { MockProvider } from 'ethereum-waffle'
 import { BasicToken } from '../typechain'
+import { SignerWithAddress } from '@nomiclabs/hardhat-ethers/signers'
 
 describe('BasicToken', () => {
   let token: BasicToken
-  let wallet, walletTo
+  let wallet: SignerWithAddress, walletTo: SignerWithAddress
 
   beforeEach(async () => {
     ;[wallet, walletTo] = await ethers.getSigners()
